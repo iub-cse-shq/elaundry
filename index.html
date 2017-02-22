@@ -11,9 +11,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
           
     <link rel="shortcut icon" href="images/favicon.ico">
     
@@ -797,6 +797,7 @@
     </section><!--/#error-->
 
 <!--order -->
+<!--
     <div style="display: none; padding-top: 150px;" class="modal fade" id="order">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -813,11 +814,141 @@
                 </div>
             </div>
         </div>
+-->
+
+<div class="modal fade" id="order" style="display: none; z-index: 77744777;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Place your order</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <div id="order-message"></div>
+                
+                    <form class="form-horizontal ajax-form" method="post" action="">
+                        <div class="form-group">
+                            <label for="CustName" class="col-sm-3 control-label">Name * </label>
+                            <div class="col-sm-6">
+                                <span class="help-block">Hasan md. imran</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="CustEmail" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-6">
+                                <span class="help-block">imranhasancs@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="CustContactNo" class="col-sm-3 control-label">Contact No * </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="CustContactNo" name="CustContactNo" placeholder="Contact No" value="01973889873">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="CustAddress" class="col-sm-3 control-label">Address * </label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" name="CustAddress" id="CustAddress" placeholder="Address">block-B</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ZoneId" class="col-sm-3 control-label">Area * </label>
+                            <div class="col-sm-6">
+                                <select class="form-control" name="ZoneId" id="ZoneId">
+                                    <option value="">Select Area</option>
+                                    <option value="2">Gulshan</option><option value="3">Banani</option><option value="4">Uttara</option><option value="6">Bashundhara</option><option value="7">Baridhara</option><option value="8">Khilkhet/Nikunjo</option>                                   
+                                </select>
+                            </div>
+                        </div>      
+                        <div class="form-group">
+                            <label for="PickupDate" class="col-sm-3 control-label">Pickup Date * </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="PickupDate" name="PickupDate" data-date-format="dd/mm/yyyy" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>  
+                        <div class="form-group">
+                            <label for="PickupTime" class="col-sm-3 control-label">Pickup Time * </label>
+                            <div class="col-sm-6">
+                                <select class="form-control" name="PickupTime" id="PickupTime">
+                                    <option value="">Select Pickup Time</option>
+                                    <option value="08.00 AM">08.00 AM</option>
+                                    <option value="09.00 AM">09.00 AM</option>
+                                    <option value="10.00 AM">10.00 AM</option>
+                                    <option value="11.00 AM">11.00 AM</option>
+                                    <option value="12.00 AM">12.00 AM</option>
+                                    <option value="01.00 PM">01.00 PM</option>
+                                    <option value="02.00 PM">02.00 PM</option>
+                                    <option value="03.00 PM">03.00 PM</option>
+                                    <option value="04.00 PM">04.00 PM</option>
+                                    <option value="05.00 PM">05.00 PM</option>
+                                    <option value="06.00 PM">06.00 PM</option>
+                                    <option value="07.00 PM">07.00 PM</option>
+                                    <option value="08.00 PM">08.00 PM</option>
+                                    <option value="09.00 PM">09.00 PM</option>
+                                    <option value="10.00 PM">10.00 PM</option>
+                                </select>
+                            </div>
+                        </div>                          
+                        <div class="form-group">
+                            <label for="PickupNotes" class="col-sm-3 control-label">Special Notes</label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" name="PickupNotes" id="PickupNotes" placeholder="Special Notes"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PickupNotes" class="col-sm-3 control-label">Purchase Package</label>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="PuchasePackage" value="Y"> I Would like to puchase new package.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group package-list" style="display:none">
+                            <label for="PackageId" class="col-sm-3 control-label"></label>
+                            <div class="col-sm-6">
+                                <select class="form-control" name="PackageId" id="PackageId">
+                                    <option value="">Select Your Package</option>
+                                    <option value="2">Family Steam Ironing Pack</option>
+                                    <option value="3">Couple Steam Ironing pack</option>
+                                    <option value="4">Single Steam Ironing Pack</option>
+                                    <option value="10">Single Washing Pack</option>
+                                    <option value="11">Couple Washing Pack</option>
+                                    <option value="12">Family Washing Pack</option>
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <label for="PickupNotes" class="col-sm-3 control-label"></label>
+                            <div class="col-sm-6">
+                                <span class="help-block margin-0">See our pakcage information from <a href="#package" target="_blank">here</a>.</span>   
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                                <button type="submit" onclick="window.location.href="customer.html" class="btn btn-primary">Place your order</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 <!--login -->
 
-    <div style="display: none;" class="modal fade in" id="login-registration">
+    <div style="display: none; z-index: 55555" class="modal fade in" id="login-registration">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1011,129 +1142,9 @@
             </div>
         </div>
     </section><!--/#bottom-->
- <!--
-    <div class="modal fade in" id="#order" style="display: block; z-index: 77744777;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Place your order</h4>
-                </div>
-                <div class="modal-body">
-                    
-                    <div id="order-message"></div>
-                
-                    <form class="form-horizontal ajax-form" method="post" action="">
-                        <div class="form-group">
-                            <label for="CustName" class="col-sm-3 control-label">Name * </label>
-                            <div class="col-sm-6">
-                                <span class="help-block">Hasan md. imran</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="CustEmail" class="col-sm-3 control-label">Email</label>
-                            <div class="col-sm-6">
-                                <span class="help-block">imranhasancs@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="CustContactNo" class="col-sm-3 control-label">Contact No * </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" id="CustContactNo" name="CustContactNo" placeholder="Contact No" value="01973889873">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="CustAddress" class="col-sm-3 control-label">Address * </label>
-                            <div class="col-sm-6">
-                                <textarea class="form-control" name="CustAddress" id="CustAddress" placeholder="Address">block-B</textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="ZoneId" class="col-sm-3 control-label">Area * </label>
-                            <div class="col-sm-6">
-                                <select class="form-control" name="ZoneId" id="ZoneId">
-                                    <option value="">Select Area</option>
-                                    <option value="2">Gulshan</option><option value="3">Banani</option><option value="4">Uttara</option><option value="6">Bashundhara</option><option value="7">Baridhara</option><option value="8">Khilkhet/Nikunjo</option>                                   
-                                </select>
-                            </div>
-                        </div>      
-                        <div class="form-group">
-                            <label for="PickupDate" class="col-sm-3 control-label">Pickup Date * </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" id="PickupDate" name="PickupDate" data-date-format="dd/mm/yyyy" placeholder="DD/MM/YYYY">
-                            </div>
-                        </div>  
-                        <div class="form-group">
-                            <label for="PickupTime" class="col-sm-3 control-label">Pickup Time * </label>
-                            <div class="col-sm-6">
-                                <select class="form-control" name="PickupTime" id="PickupTime">
-                                    <option value="">Select Pickup Time</option>
-                                    <option value="08.00 AM">08.00 AM</option>
-                                    <option value="09.00 AM">09.00 AM</option>
-                                    <option value="10.00 AM">10.00 AM</option>
-                                    <option value="11.00 AM">11.00 AM</option>
-                                    <option value="12.00 AM">12.00 AM</option>
-                                    <option value="01.00 PM">01.00 PM</option>
-                                    <option value="02.00 PM">02.00 PM</option>
-                                    <option value="03.00 PM">03.00 PM</option>
-                                    <option value="04.00 PM">04.00 PM</option>
-                                    <option value="05.00 PM">05.00 PM</option>
-                                    <option value="06.00 PM">06.00 PM</option>
-                                    <option value="07.00 PM">07.00 PM</option>
-                                    <option value="08.00 PM">08.00 PM</option>
-                                    <option value="09.00 PM">09.00 PM</option>
-                                    <option value="10.00 PM">10.00 PM</option>
-                                </select>
-                            </div>
-                        </div>                          
-                        <div class="form-group">
-                            <label for="PickupNotes" class="col-sm-3 control-label">Special Notes</label>
-                            <div class="col-sm-6">
-                                <textarea class="form-control" name="PickupNotes" id="PickupNotes" placeholder="Special Notes"></textarea>
-                            </div>
-                        </div>
+ 
+    
 
-                        <div class="form-group">
-                            <label for="PickupNotes" class="col-sm-3 control-label">Purchase Package</label>
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="PuchasePackage" value="Y"> I Would like to puchase new package.
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group package-list" style="display:none">
-                            <label for="PackageId" class="col-sm-3 control-label"></label>
-                            <div class="col-sm-6">
-                                <select class="form-control" name="PackageId" id="PackageId">
-                                    <option value="">Select Your Package</option>
-                                    <option value="2">Family Steam Ironing Pack</option><option value="3">Couple Steam Ironing pack</option><option value="4">Single Steam Ironing Pack</option><option value="10">Single Washing Pack</option><option value="11">Couple Washing Pack</option><option value="12">Family Washing Pack</option>                     </select>
-                            </div>
-                        </div>  
-
-                        <div class="form-group">
-                            <label for="PickupNotes" class="col-sm-3 control-label"></label>
-                            <div class="col-sm-6">
-                                <span class="help-block margin-0">See our pakcage information from <a href="#package" target="_blank">here</a>.</span>   
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-10">
-                                <button type="submit" class="btn btn-primary">Place your order</button>
-                            </div>
-                        </div>
-                    </form>
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
--->
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
