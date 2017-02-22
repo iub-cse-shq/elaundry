@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>eLaundry</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Account</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" role="tablist" id="account-tab">
+                        <li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">Login</a></li>
+                        <li role="presentation"><a href="#registration" role="tab" data-toggle="tab">Registration</a></li>
+                        <li role="presentation"><a href="#forgot-password" role="tab" data-toggle="tab">Forgot Password</a></li>
+                </ul>
+            <div class="tab-content" id="tabspace" style="padding-top: 10px;">
+                        <div role="tabpanel" class="tab-pane active" id="login">
+
+                            <div id="login-message"></div>
+
+                            <form class="form-horizontal ajax-form" action="" method="post">
+                                <input type="hidden" name="RedirectAfterLogin" id="RedirectAfterLogin" value="">
+                                <div class="form-group">
+                                    <label for="CustEmail" class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="CustEmail" name="CustEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password" class="col-sm-3 control-label">Password</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+                                    </div>
+                                </div>                              
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                        &nbsp;
+                                        <a href="https://www.facebook.com" class="btn btn-social btn-facebook">
+                                            <span class="fa fa-facebook"></span> Sign in with Facebook
+                                        </a>    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="registration">
+                            
+                            <div id="registration-message"></div>
+
+                            <form class="form-horizontal ajax-form" action="account/new_" method="post">
+                                <input type="hidden" name="Ref" id="Ref" value="">
+                                <input type="hidden" name="RedirectAfterRegistration" id="RedirectAfterRegistration" value="">
+                                <div class="form-group">
+                                    <label for="CustName" class="col-sm-3 control-label">Name</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="CustName" name="CustName" placeholder="Full Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CustEmail" class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="CustEmail" name="CustEmail" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CustMobile" class="col-sm-3 control-label">Contact No</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="CustMobile" name="CustMobile" placeholder="Contact No">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CustAddress" class="col-sm-3 control-label">Address</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" name="CustAddress" id="CustAddress" placeholder="Address"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CustArea" class="col-sm-3 control-label">Area</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control" name="CustArea" id="CustArea">
+                                            <option value="">Select Area</option>
+                                            <option value="2">Gulshan</option><option value="3">Banani</option><option value="4">Uttara</option><option value="6">Bashundhara</option><option value="7">Baridhara</option><option value="8">Khilkhet/Nikunjo</option>                                           
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password" class="col-sm-3 control-label">Password</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
+                                    </div>
+                                </div>                              
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Sign up</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                            <div role="tabpanel" class="tab-pane" id="forgot-password">
+
+                            <div id="forgot-password-message"></div>
+
+                            <form class="form-horizontal ajax-form" action="" method="post">
+                                <input type="hidden" name="RedirectAfterLogin" id="RedirectAfterLogin" value="">
+                                <div class="form-group">
+                                    <label for="CustEmail" class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="CustEmail" name="CustEmail" placeholder="Email">
+                                    </div>
+                                </div>                                                          
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Recover my password</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
